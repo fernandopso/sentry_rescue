@@ -1,11 +1,13 @@
-$LOAD_PATH.unshift File.expand_path '../../lib', __FILE__
+# frozen_string_literal: true
+
+$LOAD_PATH.push File.expand_path('../lib', __dir__)
+
 require 'sentry_rescue'
 
 def raise_exception
-  raise 'raise without => e'
-rescue StandardError => e
-  raise 'raise with => e'
-  puts 'continue...'
+  raise 'error'
+rescue StandardError
+  raise 'StandardError error'
 end
 
 SentryRescue.capture do
