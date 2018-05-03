@@ -1,2 +1,5 @@
 AllCops:
   TargetRubyVersion: 2.5
+
+Style/RedundantBegin:
+  Enabled: false
